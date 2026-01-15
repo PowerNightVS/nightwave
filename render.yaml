@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: nightwave-streams
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview
+    envVars:
+      - key: VITE_DISCORD_CLIENT_ID
+        scope: build
+      - key: VITE_API_URL
+        scope: build
